@@ -6,7 +6,7 @@
 #define BUFFER_SIZE 1024
 
 int count_rows(char* filename);
-void stvori();
+void stvori(); 
 
 typedef struct {
 	char ime[50];
@@ -17,12 +17,12 @@ typedef struct {
 
 int main() {
 	int n, i, max;
-	stvori();
+	stvori(); 
 	n = count_rows("Studenti.txt");
+	
+	Student* studenti=(Student*)malloc(n * sizeof(Student));
 
-	Student* studenti = (Student*)malloc(n * sizeof(Student));
-
-
+	
 	printf("Unesite maksimalan broj bodova: ");
 	scanf("%d", &max);
 
@@ -38,8 +38,8 @@ int main() {
 	}
 	fclose(fp);
 
-	for (i = 0;i < n - 1;i++) {
-		double rel = (double)studenti[i].bodovi / max * 100;
+	for (i = 0;i < n-1;i++) {
+		double rel = (double)studenti[i].bodovi / max*100;
 		printf("%s %s %d %f\n", studenti[i].ime, studenti[i].prezime, studenti[i].bodovi, rel);
 	}
 
@@ -48,7 +48,7 @@ int main() {
 }
 
 void stvori() {
-	char ime[50];
+	char ime[50]; 
 	char prezime[50];
 	int bodovi;
 	int i = 0;
@@ -60,23 +60,23 @@ void stvori() {
 	}
 
 	while (1) {
-		printf("Unesite ime %d. studenta:\n ", i + 1);
+		printf("Unesite ime %d. studenta:\n ",i+1);
 		scanf("%s", ime);
 
 		if (strcmp(ime, "stvori") == 0) {
 			break;
 		}
-		printf("Unesite prezime %d. studenta:\n ", i + 1);
+		printf("Unesite prezime %d. studenta:\n ",i+1);
 		scanf("%s", prezime);
 
-		printf("Unesite bodove %d. studenta:\n ", i + 1);
+		printf("Unesite bodove %d. studenta:\n ", i+1); 
 		scanf("%d", &bodovi);
 		fprintf(fp, "%s %s %d\n", ime, prezime, bodovi);
 		i++;
 	}
 
-	fclose(fp);
-
+	fclose(fp); 
+	
 }
 
 
@@ -96,4 +96,3 @@ int count_rows(char* filename) {
 	fclose(fp);
 	return count;
 }
-
