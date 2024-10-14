@@ -16,22 +16,25 @@ typedef struct {
 
 
 int main() {
-	int n, i, max;
+	int n = 0;
+	int i, max;
+	char filename[50] = "Studenti.txt";
 	stvori();
-	n = count_rows("Studenti.txt");
+
 
 	Student* studenti = (Student*)malloc(n * sizeof(Student));
 
 
-	printf("Unesite maksimalan broj bodova: ");
+	printf("Enter the maximum number of points: ");
 	scanf("%d", &max);
 
 	FILE* fp = fopen("Studenti.txt", "r");
+
 	if (fp == NULL) {
 		printf("Error opening file\n");
 		return ERROR_OF;
 	}
-
+	n = count_rows(filename);
 
 	for (i = 0;i < n;i++) {
 		fscanf(fp, "%s %s %d", studenti[i].ime, studenti[i].prezime, &studenti[i].bodovi);
@@ -53,23 +56,23 @@ void stvori() {
 	int bodovi;
 	int i = 0;
 
-	FILE* fp = fopen("Studenti.txt", "w");
+	FILE* fp = NULL;
+	fp = fopen("Studenti.txt", "w");
 	if (fp == NULL) {
 		printf("Error creating file\n");
-		return ERROR_OF;
 	}
 
 	while (1) {
-		printf("Unesite ime %d. studenta:\n ", i + 1);
+		printf("Enter the name of the %d. student or 'stvori' for making the file:\n ", i + 1);
 		scanf("%s", ime);
 
 		if (strcmp(ime, "stvori") == 0) {
 			break;
 		}
-		printf("Unesite prezime %d. studenta:\n ", i + 1);
+		printf("Enter the surname of the %d. student:\n ", i + 1);
 		scanf("%s", prezime);
 
-		printf("Unesite bodove %d. studenta:\n ", i + 1);
+		printf("Enter ponits  of the  %d. student:\n ", i + 1);
 		scanf("%d", &bodovi);
 		fprintf(fp, "%s %s %d\n", ime, prezime, bodovi);
 		i++;
@@ -87,7 +90,7 @@ int count_rows(char* filename) {
 	fp = fopen(filename, "r");
 	if (fp == NULL) {
 		printf("Error opening file\n");
-		return;
+		return ERROR_OF;
 	}
 	while (!feof(fp)) {
 		fgets(buffer, BUFFER_SIZE, fp);
