@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+
+class razlomak              
+{
+  private:
+
+
+    int brojnik;
+    int nazivnik; 
+
+
+  public:       
+    razlomak();
+    void Set(int tempBr, int tempNz);
+    double GetDecimal();
+};
+
+
+razlomak::razlomak() {
+  brojnik=0;
+  nazivnik=1;
+}
+
+
+void razlomak:: Set(int tempBr, int tempNz){
+  if(tempNz=0){
+    cout<<"Greska!Nazivnik ne smije biti 0!"<<endl;
+  }
+  else{
+    brojnik=tempBr;
+    nazivnik=tempNz;
+  }
+}
+
+
+double razlomak::GetDecimal() {
+  return (double)brojnik/nazivnik;
+}
+
+
+
+int main(void) {
+  razlomak raz;
+  int b,n;
+
+
+  cout << "Upisite vrijednost brojnika:" << endl;
+  cin >> b;
+  cout << "Upisite vrijednost nazvnika:" << endl;
+  cin >> n;
+  raz.Set( b,n );     
+
+
+  cout << "Decimalna vrijednost razlomka je:     " << raz.GetDecimal() << endl; 
+
+
+  return 0;
+}
