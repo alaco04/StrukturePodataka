@@ -1,0 +1,5 @@
+﻿  zad3.c
+C:\Users\andre\source\repos\vjezba3\vjezba3\zad3.c(346,11): warning C4101: 'temp': unreferenced local variable
+C:\Users\andre\source\repos\vjezba3\vjezba3\zad3.c(341,1): warning C4716: 'write_file': must return a value
+C:\Users\andre\source\repos\vjezba3\vjezba3\zad3.c(371,1): warning C4715: 'read_file': not all control paths return a value
+  vjezba3.vcxproj -> C:\Users\andre\source\repos\vjezba3\vjezba3\x64\Debug\vjezba3.exe
