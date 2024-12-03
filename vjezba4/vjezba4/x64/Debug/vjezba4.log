@@ -1,0 +1,4 @@
+﻿  zad4.c
+C:\Users\andre\Desktop\StrukturePodataka\vjezba4\vjezba4\zad4.c(310,16): warning C4477: 'fscanf' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'int'
+C:\Users\andre\Desktop\StrukturePodataka\vjezba4\vjezba4\zad4.c(310,16): warning C4477: 'fscanf' : format string '%d' requires an argument of type 'int *', but variadic argument 2 has type 'int'
+  vjezba4.vcxproj -> C:\Users\andre\Desktop\StrukturePodataka\vjezba4\x64\Debug\vjezba4.exe

@@ -1,0 +1,3 @@
+﻿  zad5.c
+C:\Users\andre\Desktop\StrukturePodataka\vjezba5\vjezba5\zad5.c(138,5): warning C4098: 'ispis': 'void' function returning a value
+  vjezba5.vcxproj -> C:\Users\andre\Desktop\StrukturePodataka\vjezba5\x64\Debug\vjezba5.exe
